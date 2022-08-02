@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- first approach -->
+    <button onclick="document.getElementById('paragraph').innerHTML =123321321">First button</button>
+    <p id="paragraph"></p>
+
+    <!-- second approach -->
+    <button id="clickme">Second button</button>
+    <p id="textBox"></p>
+
+    <!-- third approach -->
+    <input type="text" oninput="showText(value)" />
+    <p id="displayBox"></p>
+
+    <script>
+        const textBox = document.getElementById("textbox");
+        const btnClickMe = document.getElementById("clickme");
+        btnClickMe.addEventListener("click", function() {
+            textBox.innerHTML = Date()
+        })
+
+        function showText(text) {
+            document.getElementById("displayBox").innerHTML = text
+        }
+    </script>
+</body>
+</html>
