@@ -1,3 +1,66 @@
+@font-face {
+    font-family: 'YourFontName'; /*a name to be used later*/
+    src: url('http://domain.example/fonts/font.ttf'); /*URL to font*/
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 4vw;
+}
+
+h1, h2, ul, li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 3vw;
+    margin-top: 0;
+}
+
+li {
+    font-weight: 100;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    font-weight: 600;
+    font-size: 1vw;
+}
+
+body {
+    display: inline;
+    background-color: #ecf0f1;
+}
+
+
 ul {
     display: none;
+    list-style: none;
+    margin-left: 0;
+    margin-right: 15%;
+    padding: 0; 
+}
+
+#infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#moreInfoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30%;
+    margin-top: 10%;
 }
