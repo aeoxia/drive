@@ -4,23 +4,24 @@ const bodyParser = require('body-parser');
 const app = express(); 
 const port = 3000; 
 
+app.use(express.static('public'))
+
 // Where we will keep books  
 let books = [
     {
         "id": "d00f5c3d-5872-455d-83a6-6b26e01126b2",
-        "name": "first book"
+        "name": "coco book season 1",
+        "image_url": "http://localhost:3000/images/coco1.jpg"
     },
     {
         "id": "d00f5c3d-5872-455d-83a6-6b26e01126b3",
-        "name": "second book"
+        "name": "coco book season 2",
+        "image_url": "http://localhost:3000/images/coco2.jpg"
     },
     {
         "id": "d00f5c3d-5872-455d-83a6-6b26e01126b4",
-        "name": "another book"
-    },
-    {
-        "id": "d00f5c3d-5872-455d-83a6-6b26e01126b5",
-        "name": "then another one again book"
+        "name": "coco book season 3",
+        "image_url": "http://localhost:3000/images/coco3.jpg"
     }
 ]; 
 

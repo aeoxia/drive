@@ -8,22 +8,33 @@ const app = express()
 app.use(express.json())
 const port = 3000
 const pool = new Pool({
-    user: 'Kennu',
+    user: 'postgres',
     host: 'localhost',
-    database: 'studentapi',
+    database: 'cocomove',
     password: '',
     port: 5432
 })
 
+app.get('/skins', async (request, response) => {
+    try {
+        const skins = await pool.query("SELECT * FROM public.skins where id in (SELECT * from public.device_skin where device_id in (SELECT id from public.device))")
+        response.json(skins.rows)
+    } catch (error) {
+        console.log(error)
+    }
+})
 
-//#region api section
-//home
-app.get('/', (request, response) => {
-    response.json(
-        {
-            info: 'Hello I am a Backend developer now!'
-        }
-    )
+app.get('/devices', async (request, response) => {
+    try {
+        const devices = await pool.query("SELECT * FROM public.devices ORDER BY id ASC ")
+        response.json(devices.rows)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.listen(port, () => {
+    console.log(`App running on http://localhost:${port}`)
 })
 
 //student api
